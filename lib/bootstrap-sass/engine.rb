@@ -6,11 +6,9 @@ module Bootstrap
           app.config.assets.paths << root.join('assets', sub).to_s
         end
 
-        # sprockets-rails 3 tracks down the calls to `font_path` and `image_path`
-        # and automatically precompiles the referenced assets.
-        unless Sprockets::Rails::VERSION.split('.', 2)[0].to_i >= 3
-          app.config.assets.precompile << %r(bootstrap/glyphicons-halflings-regular\.(?:eot|svg|ttf|woff2?)$)
-        end
+        font_paths = %w(bootstrap/glyphicons-halflings-regular.eot bootstrap/glyphicons-halflings-regular.ttf
+        bootstrap/glyphicons-halflings-regular.woff2 bootstrap/glyphicons-halflings-regular.svg bootstrap/glyphicons-halflings-regular.woff)
+        font_paths.each { |el| app.config.assets.precompile.append(el) }
       end
     end
   end
