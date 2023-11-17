@@ -1,3 +1,8 @@
+# Patternbank fork notes
+This is a temporary maintenance fork to backport upstream fixes (see `master branch`) into the `patternbank` branch used in the main project's Gemfile, while maintaining backwards compatibility with SassC. In the mid- to near- future it is intended that we upgrade to Node sass, or (preferably) do a full frontend refresh and upgrade away Bootstrap v3 entirely.
+
+Occasionally `master` should be synced from upstream, and then *only the appropriate commits* cherry-picked across into the `patternbank` branch. Anything to do with Node sass (eg. `math.div`) should not be picked, but as time goes on other breaking changes may be introduced.
+
 # Bootstrap 3 for Sass
 [![Gem Version](https://badge.fury.io/rb/bootstrap-sass.svg)](http://badge.fury.io/rb/bootstrap-sass)
 [![npm version](https://img.shields.io/npm/v/bootstrap-sass.svg?style=flat)](https://www.npmjs.com/package/bootstrap-sass)
